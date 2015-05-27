@@ -1,6 +1,7 @@
 package com.edwinhollen.counterfeiter;
 
 import org.newdawn.slick.Image;
+import org.newdawn.slick.SlickException;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -14,7 +15,18 @@ import java.util.concurrent.FutureTask;
 public class Assets {
     private static Map<String, Image> loadedImages = new HashMap<>();
 
-    public Future<Image> getImage(String name){
-        
+    public Image getImage(String name){
+        return loadedImages.getOrDefault(name, loadImage(name));
+    }
+
+    private Image loadImage(String name){
+        try {
+            Image img = new Image(name);
+            loadedImages.put(name, img);
+            return img;
+        } catch (SlickException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 }
