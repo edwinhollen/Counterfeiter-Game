@@ -27,7 +27,7 @@ public class Game extends BasicGame {
 
     @Override
     public void init(GameContainer container) throws SlickException {
-        Excess excess = new Excess();
+
 
     }
 
