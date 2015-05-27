@@ -17,8 +17,6 @@ public class TitleScene extends Scene {
         this.excess.addSystem(new ImageSystem());
         this.excess.addSystem(new PhysicsSystem());
 
-
-
         // bg
         this.excess.addEntity(new Entity(Arrays.asList(
             new PositionComponent(0, 0),
@@ -29,6 +27,12 @@ public class TitleScene extends Scene {
         this.excess.addEntity(new Entity(Arrays.asList(
                 new PositionComponent(200, 200),
                 new ImageComponent("scissors.png", 0.8f)
+        )));
+
+        // marker
+        this.excess.addEntity(new Entity(Arrays.asList(
+                new PositionComponent(-20, -20),
+                new ImageComponent("marker.png", 0.8f)
         )));
 
 
