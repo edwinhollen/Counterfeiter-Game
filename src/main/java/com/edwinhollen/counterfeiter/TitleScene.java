@@ -1,25 +1,23 @@
 package com.edwinhollen.counterfeiter;
 
+import edwinhollen.excess.Entity;
 import edwinhollen.excess.Excess;
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
 
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+
 /**
  * Created by Edwin on 5/26/2015.
  */
-public class TitleScene implements Scene {
-    private Excess excess;
-
+public class TitleScene extends Scene {
     public TitleScene(){
-        excess = new Excess();
-    }
+        this.excess.addSystem(new ImageSystem());
+        this.excess.addSystem(new PhysicsSystem());
 
-    public void render(GameContainer gc, Graphics g) {
-
-    }
-
-    public void update(GameContainer gc, int dt) {
-
+        this.excess.addEntity(new Entity(Arrays.asList(new PositionComponent(0, 0), new ImageComponent("palette.png"))));
     }
 
     public void dispose() {

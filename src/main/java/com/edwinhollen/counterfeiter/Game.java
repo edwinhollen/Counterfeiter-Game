@@ -21,19 +21,18 @@ public class Game extends BasicGame {
         super("Counterfeiter");
     }
 
-    public void render(GameContainer container, Graphics g) throws SlickException {
-
+    public void render(GameContainer gc, Graphics g) throws SlickException {
+        SceneManager.currentScene.render(gc, g);
     }
 
     @Override
     public void init(GameContainer container) throws SlickException {
-
-
+        SceneManager.changeScene(TitleScene.class);
     }
 
     @Override
-    public void update(GameContainer container, int delta) throws SlickException {
-
+    public void update(GameContainer gc, int dt) throws SlickException {
+        SceneManager.currentScene.update(gc, dt);
     }
     
     public static void main(String[] args) throws SlickException {

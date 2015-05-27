@@ -8,6 +8,6 @@ import java.util.List;
 /**
  * Created by Edwin on 5/26/2015.
  */
-public interface EntitiesUpdateable extends Updateable{
+public interface EntitiesUpdateable{
     void update(List<Entity> entities, GameContainer gc, int dt);
 }

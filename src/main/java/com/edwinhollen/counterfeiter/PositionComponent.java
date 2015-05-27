@@ -8,4 +8,9 @@ import edwinhollen.excess.Component;
 public class PositionComponent implements Component {
     public double x = 0;
     public double y = 0;
+
+    public PositionComponent(double x, double y) {
+        this.x = x;
+        this.y = y;
+    }
 }

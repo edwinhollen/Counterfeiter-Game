@@ -15,11 +15,11 @@ import java.util.concurrent.FutureTask;
 public class Assets {
     private static Map<String, Image> loadedImages = new HashMap<>();
 
-    public Image getImage(String name){
+    public static Image getImage(String name){
         return loadedImages.getOrDefault(name, loadImage(name));
     }
 
-    private Image loadImage(String name){
+    private static Image loadImage(String name){
         try {
             Image img = new Image(name);
             loadedImages.put(name, img);
