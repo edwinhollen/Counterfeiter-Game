@@ -17,7 +17,22 @@ public class TitleScene extends Scene {
         this.excess.addSystem(new ImageSystem());
         this.excess.addSystem(new PhysicsSystem());
 
-        this.excess.addEntity(new Entity(Arrays.asList(new PositionComponent(0, 0), new ImageComponent("palette.png"))));
+
+
+        // bg
+        this.excess.addEntity(new Entity(Arrays.asList(
+            new PositionComponent(0, 0),
+            new ImageComponent("lightbg.png")
+        )));
+
+        // scissors
+        this.excess.addEntity(new Entity(Arrays.asList(
+                new PositionComponent(200, 200),
+                new ImageComponent("scissors.png", 0.8f)
+        )));
+
+
+
     }
 
     public void dispose() {

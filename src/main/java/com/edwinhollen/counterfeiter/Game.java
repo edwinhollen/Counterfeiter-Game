@@ -11,8 +11,8 @@ import org.newdawn.slick.SlickException;
  * A game using Slick2d
  */
 public class Game extends BasicGame {
-    private static final int RENDER_WIDTH = 400;
-    private static final int RENDER_HEIGHT = 300;
+    public static final int RENDER_WIDTH = 400;
+    public static final int RENDER_HEIGHT = 300;
     
     /** A counter... */
     private int counter;

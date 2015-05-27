@@ -22,6 +22,7 @@ public class Assets {
     private static Image loadImage(String name){
         try {
             Image img = new Image(name);
+            img.setFilter(Image.FILTER_NEAREST);
             loadedImages.put(name, img);
             return img;
         } catch (SlickException e) {
