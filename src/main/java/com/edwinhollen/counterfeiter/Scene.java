@@ -14,14 +14,14 @@ public abstract class Scene implements Updateable, Renderable{
     public void render(GameContainer gc, Graphics g) {
         this.excess.getOrganizedEntities().entrySet().stream()
                 .filter(systemListEntry -> systemListEntry.getKey() instanceof EntitiesRenderable)
-                .forEach(systemListEntry -> ((EntitiesRenderable) systemListEntry.getKey()).render(systemListEntry.getValue(), gc, g));
+                .forEachOrdered(systemListEntry -> ((EntitiesRenderable) systemListEntry.getKey()).render(systemListEntry.getValue(), gc, g));
     }
 
     @Override
     public void update(GameContainer gc, int dt) {
         this.excess.getOrganizedEntities().entrySet().stream()
                 .filter(systemListEntry -> systemListEntry.getKey() instanceof EntitiesUpdateable)
-                .forEach(systemListEntry -> ((EntitiesUpdateable) systemListEntry.getKey()).update(systemListEntry.getValue(), gc, dt));
+                .forEachOrdered(systemListEntry -> ((EntitiesUpdateable) systemListEntry.getKey()).update(systemListEntry.getValue(), gc, dt));
     }
 
     public abstract void dispose();
