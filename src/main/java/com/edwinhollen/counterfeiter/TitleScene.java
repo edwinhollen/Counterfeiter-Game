@@ -14,9 +14,10 @@ import java.util.stream.Collectors;
  */
 public class TitleScene extends Scene {
     public TitleScene(){
+        this.excess.addSystem(new UILabelSystem());
         this.excess.addSystem(new ImageSystem());
         this.excess.addSystem(new PhysicsSystem());
-        this.excess.addSystem(new UILabelSystem());
+
 
         // bg
         this.excess.addEntity(new Entity(Arrays.asList(
