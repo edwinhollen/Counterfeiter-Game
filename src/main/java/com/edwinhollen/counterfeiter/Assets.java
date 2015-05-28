@@ -30,4 +30,9 @@ public class Assets {
         }
         return null;
     }
+
+    public static enum FontType{
+        SANS_SERIF,
+        SPECIAL
+    }
 }

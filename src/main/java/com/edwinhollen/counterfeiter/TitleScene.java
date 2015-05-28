@@ -16,6 +16,7 @@ public class TitleScene extends Scene {
     public TitleScene(){
         this.excess.addSystem(new ImageSystem());
         this.excess.addSystem(new PhysicsSystem());
+        this.excess.addSystem(new UILabelSystem());
 
         // bg
         this.excess.addEntity(new Entity(Arrays.asList(
@@ -25,16 +26,21 @@ public class TitleScene extends Scene {
 
         // scissors
         this.excess.addEntity(new Entity(Arrays.asList(
-                new PositionComponent(200, 200),
-                new ImageComponent("scissors.png", 0.8f)
+            new PositionComponent(200, 200),
+            new ImageComponent("scissors.png", 0.8f)
         )));
 
         // marker
         this.excess.addEntity(new Entity(Arrays.asList(
-                new PositionComponent(-20, -20),
-                new ImageComponent("marker.png", 0.8f)
+            new PositionComponent(-20, -20),
+            new ImageComponent("marker.png", 0.8f)
         )));
 
+        // title
+        this.excess.addEntity(new Entity(Arrays.asList(
+            new UILabelComponent("Counterfeiter", Assets.FontType.SPECIAL),
+            new PositionComponent(Game.RENDER_WIDTH/2, Game.RENDER_HEIGHT/2)
+        )));
 
 
     }
